@@ -1,7 +1,7 @@
 (ns mynote-api.core
   (:require [io.pedestal.http :as http]
             ;importing api routes for mapping it to route table
-            [mynote-api.notes :as myn]
+            [mynote-api.notesroute :as myn]
             ;used for refreshing repl without exiting repl when code changed
             [clojure.tools.namespace.repl :refer [refresh]]
             ;used to accept parameters through http body
@@ -19,6 +19,7 @@
     ["/notes" :post 
               [(body-params) myn/create-note] 
               :route-name :save-notes]
+    ["/note/:id" :delete myn/delete-note :route-name :delete-a-note]          
   })
 
 

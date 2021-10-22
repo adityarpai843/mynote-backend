@@ -4,9 +4,9 @@
 io.pedestal/pedestal.jetty {:mvn/version "0.5.9"}
 io.pedestal/pedestal.route {:mvn/version "0.5.9"}
 org.slf4j/slf4j-simple {:mvn/version "1.7.32"}
-org.clojure/java.jdbc {:mvn/version "0.7.12"}
 mysql/mysql-connector-java {:mvn/version "8.0.26"}
 org.clojure/tools.namespace {:mvn/version "0.2.11"}
+com.layerware/hugsql {:mvn/version "0.4.9"}
 }
  :mvn/repos
  {"central" {:url "https://repo1.maven.org/maven2/"}
