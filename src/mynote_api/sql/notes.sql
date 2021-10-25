@@ -2,7 +2,7 @@
 -- :doc Get all drugs
 SELECT * FROM  note;
 
--- :name create-data :insert :1
+-- :name create-data :! :n
 INSERT INTO
 note(text)
 VALUES(:text);

@@ -31,8 +31,8 @@
  (if (s/valid? ::notespec new-note)
  ;sql/insert inserts data into database where field is text and if its successfull a message 
  ;Note created successfully is sent tot frontend as JSON {"msg":"Note Created Successfully"} with status code for resource created
-         ((sql/create-data db-config new-note)
-        (assoc (http/json-response {:msg "Note Created Successfully"}) :status 201))
+         ((let [n (sql/create-data db-config new-note)]
+        (assoc (http/json-response {:msg "Note Created Successfully"}) :status 201)))
  ;Below statement is else statement which is sends error message because of some failure in data validation       
       (assoc (http/json-response {:msg "Please Enter a Valid Note."}):status 400))))
 
